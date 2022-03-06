@@ -1,0 +1,93 @@
+
+
+.container-section-galery{
+  width: 100%;
+  display: flex;
+  color: white;
+}
+.section-images{
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+.section-images div{
+  position: relative;
+  margin-bottom: 20px;
+  display: flex;
+  height: 210px;
+
+}
+.section-images span {
+position: absolute;
+bottom: 0;
+padding: 5px;
+}
+
+span:last-child{
+  right: 0;
+} 
+.section-images img {
+  object-fit: cover;
+  transition: all .3s;
+  cursor: pointer;
+
+}
+.section-images img:hover{
+transform: scale(1.1);  
+}
+
+.section-filters{
+  width: 20%;
+  text-align: center;
+}
+.section-filters ul{
+width: 100%;
+}
+.section-filters h2{
+ padding: 40px;
+}
+.section-filters button{
+display: block;
+width: 35%;
+margin: 0 auto;
+background: none;
+border: none;
+color: white;
+font-size: 20px;
+cursor: pointer;
+margin-bottom: 15px ;
+}
+/* Hoover underline CODEPEN*/
+.section-filters button{
+  position: relative;
+}
+
+.section-filters button::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 0.1em;
+  background-color: white;
+  opacity: 0;
+  transition: opacity 300ms, transform 300ms;
+}
+
+.section-filters button:hover::after,
+.section-filters button:focus::after {
+  opacity: 1;
+  transform: translate3d(0, 0.2em, 0);
+}
+li:nth-child(3) .section-filters button::after {
+  opacity: 1;
+  transform: scale(0);
+  transform-origin: center;
+}
+
+li:nth-child(3) .section-filters button:hover::after,
+li:nth-child(3) .section-filters button:focus::after{
+  transform: scale(2);
+}
+/* finish Hoover underline */

@@ -1,0 +1,67 @@
+{
+  "images": [
+    {
+      "id": 1,
+      "url": "images/img1.jpg",
+      "category": "animals",
+      "likes": "67",
+      "views": "100"
+    },
+    {
+      "id": 8,
+      "url": "images/img8.jpg",
+      "category": "animals",
+      "likes": "1",
+      "views": "4"
+    },
+    {
+      "id": 3,
+      "url": "images/img3.jpg",
+      "category": "animals",
+      "likes": "50",
+      "views": "50"
+    },
+    {
+      "id": 4,
+      "url": "images/4.jpg",
+      "category": "forest",
+      "likes": "3",
+      "views": "1"
+    },
+    {
+      "id": 6,
+      "url": "images/img6.jpg",
+      "category": "forest",
+      "likes": "443",
+      "views": "37"
+    },
+    {
+      "id": 7,
+      "url": "images/img7.jpg",
+      "category": "animals",
+      "likes": "12",
+      "views": "13"
+    },
+    {
+      "id": 2,
+      "url": "images/img2.jpg",
+      "category": "forest",
+      "likes": "64",
+      "views": "27"
+    },
+    {
+      "id": 5,
+      "url": "images/5.jpg",
+      "category": "forest",
+      "likes": "49",
+      "views": "26"
+    }, 
+    {
+      "id": 9,
+      "url": "images/img9.jpg",
+      "category": "forest",
+      "likes": "59",
+      "views": "5"
+    }
+  ]
+}
