@@ -1,34 +1,36 @@
 document.addEventListener('DOMContentLoaded', init, false);
 
-function init(){
+function init() {
 
-///Variables
+  ///Variables
+  const date = document.querySelector('.year');
+
   const btnForest = document.querySelector('.btnForest');
   const btnAnimals = document.querySelector('.btnAnimals');
   const btnViews = document.querySelector('.btnViews');
   const btnLikes = document.querySelector('.btnLikes');
   const btnAll = document.querySelector('.btnAll');
-
+  const wrapper = document.querySelector('.wrapper');
 
   const sectionImages = document.querySelector('.section-images')
-  let data = [];
+  let data = []; //db with global scope
 
-  //Eventos 
-  btnForest.addEventListener('click',() => filterCategories('forest'), false);
-  btnAnimals.addEventListener('click',() => filterCategories('animals'), false);
+  //Events
+  btnForest.addEventListener('click', () => filterCategories('forest'), false);
+  btnAnimals.addEventListener('click', () => filterCategories('animals'), false);
   btnAll.addEventListener('click', showAll, false);
 
   btnViews.addEventListener('click', sortByViews, false);
   btnLikes.addEventListener('click', sortByLikes, false);
-  
+
 
   //http://localhost:3000/images/
-  fetch('http://localhost:3000/images/')
-    .then(response => response.json())
-    .then(images => {
+  fetch('http://localhost:3000/images/')   ///fetch data from server
+    .then(bd => bd.json())   ///parse to json
+    .then(images => {        ///bd
       data = images
-      images.forEach( img => {
-        sectionImages.innerHTML +=`
+      images.forEach(img => {
+        sectionImages.innerHTML += `
          <div>
         <img class="gallery-img" src="${img.url}">
         <span>Likes: ${img.likes}</span>
@@ -37,11 +39,11 @@ function init(){
         `;
       })
     });
- 
+
   //Functions
-  function filterCategories(category){
+  function filterCategories(category) {
     let filtered = data.filter((img) => img.category === category)
-   sectionImages.innerHTML = '';
+    sectionImages.innerHTML = ''; //para nao duplicar img
     filtered.forEach(img => {
       sectionImages.innerHTML += `
       <div>
@@ -51,7 +53,6 @@ function init(){
       </div>
         `;
     });
-    
   }
 
   function showAll() {
@@ -95,22 +96,48 @@ function init(){
     });
   }
 
+
+  sectionImages.addEventListener('click', (e) => {
+    if (e.target.classList[0] === 'gallery-img') {
+      wrapper.classList.add('layout')
+      wrapper.innerHTML = `<img class="fullSize" src="${e.target.src}" alt=""/>`
+    }
  
+  })
 
 
+  wrapper.addEventListener('click', (e) => {
+    if (e.target.classList[0] === 'fullSize') {
+      wrapper.classList.remove('layout')
+      e.target.remove()
+    }
+  })
 
-
-
-
-
-
-
-
-
-
-
-
-
-
+  //dynamic date
+  date.innerHTML = new Date().getFullYear();
 
 }
+
+
+//   Descrição de projeto
+//
+//   Cada botão no navbar tem um evento ‘click’ com função callback que chama sua função.
+//
+//       Estou usar método fetch para buscar o BD que encontra-se num ficheiro .json.
+//
+//       Uso json server para arrancar servidor local.
+//
+//       Com método forEach faço iteração de objetos que estão na BD para renderizar os na pagina.
+//       Na cada iteração desenho um div com imgem, likes, views.
+//
+//       Função filterCategory :
+//       - recebe um  argumento ‘category’
+//   - o primeiro passo filtra array ‘data’ anteriormente definido com todas imagens baseado no parâmetro passado para função (pode ser ‘animal’ ou ‘forest’)
+//   - segundo passo è limpar o section-img para prevenir duplicação de imagens
+//   - terceiro passo è iterar  array filtrado e desenhar div com imgens, likes e views
+//
+//
+//   Função showAll :
+//   - Primeiro passo è limpar section-img
+//   - Estou usar método fetch para iterar cada imã
+//   - Terceiro Desenhar div com img, likes,views

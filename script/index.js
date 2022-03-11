@@ -14,13 +14,15 @@ function init() {
   img2.addEventListener('click', () => changeImage(img2.src), false);
   img3.addEventListener('click', () => changeImage(img3.src), false);
 
-  //Fucntions
+  //Function
   function changeImage(imageUrl) {
-    //console.log(this);
-    mainFoto.src = imageUrl;
+      mainFoto.src = imageUrl;
   }
-
 
   //dynamic date
   date.innerHTML = new Date().getFullYear();
 }
+
+//Description
+// - Cada img tem evento 'click' com funçao callback, que chama funçao changeImage URL da imagem que clicou
+// - funçao changeImage recebe argumento e substitui o atributo src do main foto
