@@ -28,7 +28,7 @@ function init() {
 
 
   //http://localhost:3000/images/
-  fetch('http://localhost:3000/images/')   ///fetch data from server
+  fetch('https://622f548d3ff58f023c1d627a.mockapi.io/api/images/images/')   ///fetch data from mockAPI
     .then(bd => bd.json())   ///parse to json
     .then(images => {        ///bd
       data = images
