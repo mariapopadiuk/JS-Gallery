@@ -27,8 +27,12 @@ function init() {
   mybutton.addEventListener('click',topFunction,false)
 
 
-  //http://localhost:3000/images/
-  fetch('https://622f548d3ff58f023c1d627a.mockapi.io/api/images/images/')   ///fetch data from mockAPI
+  //http://localhost:3000/images/ if dev
+  //https://622f548d3ff58f023c1d627a.mockapi.io/api/images/images/ if prod
+  const prodUrl = 'https://622f548d3ff58f023c1d627a.mockapi.io/api/images/images/'
+  const devUrl = 'http://localhost:3000/images/'
+
+  fetch(prodUrl)   ///fetch data from mockAPI
     .then(bd => bd.json())   ///parse to json
     .then(images => {        ///bd
       data = images
@@ -164,3 +168,11 @@ function init() {
 //   - Primeiro passo è limpar section-img
 //   - Estou usar método fetch para iterar cada img
 //   - Terceiro Desenhar div com img, likes,views
+
+
+
+//Mock API
+/* 
+Localmente para desenvolvimento usei json server como BD
+Na producao (github pages) usei mock API como BD
+*/
