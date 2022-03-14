@@ -7,13 +7,14 @@
   width: 100%;
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
+  justify-content: space-around;
 }
 .section-images div{
   position: relative;
   margin-bottom: 20px;
   display: flex;
   height: 210px;
+  min-width: 30%;
 
 }
 .section-images span {
@@ -31,8 +32,9 @@ span:last-child{
   cursor: pointer;
 
 }
+ 
 .section-images .gallery-img:hover{
-transform: scale(1.1);  
+transform: scale(1.02);  
 }
 
 .section-filters{
@@ -101,11 +103,59 @@ li:nth-child(3) .section-filters button:focus::after{
   bottom: 0;
   background-color: rgb(0,0,0, .7);
 }
-.fullSize{
+.full-sizeImg-wrapper{
   position: fixed;
   z-index: 1;
   left: 50%; 
-  top: 50%;
-  max-width: 50%;
+  top: 50%; 
   transform: translate(-50%, -50%);
 }
+.full-sizeImg-wrapper::after{
+  right: 10px;
+  cursor: pointer;
+  font-size: 20px;
+  position: absolute;
+  content: 'X';
+}
+
+/* Button Back to TOP w3school*/
+#myBtn {
+  display: none;
+  position: fixed; /* Fixed/sticky position */
+  bottom: 20px; /* Place the button at the bottom of the page */
+  right: 20px; /* Place the button 30px from the right */
+  z-index: 99; /* Make sure it does not overlap */
+  border: none; /* Remove borders */
+  outline: none; /* Remove outline */
+  background-color:black; /* Set a background color */
+  color: white; /* Text color */
+  cursor: pointer; /* Add a mouse pointer on hover */
+  padding: 15px; /* Some padding */
+  border-radius: 10px; /* Rounded corners */
+  font-size: 18px; /* Increase font size */
+}
+
+#myBtn:hover {
+  background-color: #555; /* Add a dark-grey background on hover */
+}
+
+
+
+/* Mobile Version */
+@media(max-width: 860px){
+ .fullSize{
+   width: 100%;
+ }
+ .container-section-galery{
+   display: block;
+ }
+ .section-filters{
+   width: 100%;
+   display: flex; 
+   margin: -35px auto 0;
+ }
+ .section-filters h2{
+   padding: 10px;
+ }
+}
+

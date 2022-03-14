@@ -18,6 +18,10 @@
   max-width: 100%;
   padding: 5px; 
 }
+.main-foto{
+  transition: all 1s;
+}
+
 /* .preview button{
   padding: 20px;
  position: absolute;

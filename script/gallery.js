@@ -11,7 +11,7 @@ function init() {
   const btnLikes = document.querySelector('.btnLikes');
   const btnAll = document.querySelector('.btnAll');
   const wrapper = document.querySelector('.wrapper');
-
+  const mybutton = document.getElementById("myBtn");
   const sectionImages = document.querySelector('.section-images')
   let data = []; //db with global scope
 
@@ -23,12 +23,16 @@ function init() {
   btnViews.addEventListener('click', sortByViews, false);
   btnLikes.addEventListener('click', sortByLikes, false);
 
+  //Bitton to top
+  mybutton.addEventListener('click',topFunction,false)
+
 
   //http://localhost:3000/images/
   fetch('http://localhost:3000/images/')   ///fetch data from server
     .then(bd => bd.json())   ///parse to json
     .then(images => {        ///bd
       data = images
+      //imagesLoader.style.display = 'none'
       images.forEach(img => {
         sectionImages.innerHTML += `
          <div>
@@ -36,8 +40,9 @@ function init() {
         <span>Likes: ${img.likes}</span>
         <span>Views: ${img.views}</span>
       </div>
-        `;
+        `; 
       })
+      
     });
 
   //Functions
@@ -95,19 +100,37 @@ function init() {
         `;
     });
   }
+  //function for Buttun to TOP
+  // When the user scrolls down 20px from the top of the document, show the button
+  window.onscroll = function () { scrollFunction() };
+
+  function scrollFunction() {
+    if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+      mybutton.style.display = "block";
+    } else {
+      mybutton.style.display = "none";
+    }
+  }
+
+  // When the user clicks on the button, scroll to the top of the document
+  function topFunction() {
+    document.body.scrollTop = 0; // For Safari
+    document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+  }
+  //End Button to TOP
 
 
   sectionImages.addEventListener('click', (e) => {
     if (e.target.classList[0] === 'gallery-img') {
       wrapper.classList.add('layout')
-      wrapper.innerHTML = `<img class="fullSize" src="${e.target.src}" alt=""/>`
+      wrapper.innerHTML = `<div class="full-sizeImg-wrapper"><img class="fullSize" src="${e.target.src}" alt=""/></div>`
     }
  
   })
 
 
   wrapper.addEventListener('click', (e) => {
-    if (e.target.classList[0] === 'fullSize') {
+    if (e.target.classList[0] === 'full-sizeImg-wrapper') {
       wrapper.classList.remove('layout')
       e.target.remove()
     }
@@ -139,5 +162,5 @@ function init() {
 //
 //   Função showAll :
 //   - Primeiro passo è limpar section-img
-//   - Estou usar método fetch para iterar cada imã
+//   - Estou usar método fetch para iterar cada img
 //   - Terceiro Desenhar div com img, likes,views
