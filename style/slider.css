@@ -2,6 +2,7 @@
 
 .slider {
   width: 100%;
+  margin-bottom: 40px;
 }
 
 .preview{
@@ -22,27 +23,6 @@
   transition: all 1s;
 }
 
-/* .preview button{
-  padding: 20px;
- position: absolute;
- background: transparent;
- border: none;
- font-size: 35px;
- color: white;
- cursor: pointer;
-transition: all .5s ease-in;
-} */
-
-/* .preview button:hover{
-background-color: rgba(0, 0, 0, .4);
-}
-.button-prev{
-  left: 0;
-}
-.button-next{
-  right: 0;
-} */
-
 .thumbnails {
   margin-top: 30px;
   display: flex;
@@ -59,13 +39,13 @@ transform: scale(1.1);
 .text{
 margin: 0 auto;
 width: 70%;
+padding: 20px;
 }
 .text p{
   color: #ffff;
   text-align: center;
-  font-size: 20px;
+  font-size: 30px;
   font-weight: lighter;
   line-height: 30px;
   letter-spacing: 1px;
-  padding: 30px;
 }

@@ -1,32 +1,17 @@
-/*
-* Prefixed by https://autoprefixer.github.io
-* PostCSS: v8.3.6,
-* Autoprefixer: v10.3.1
-* Browsers: last 4 version
-*/
-
 .container-section-galery{
   width: 100%;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
   color: white;
 }
 .section-images{
   width: 100%;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
-  -ms-flex-pack: distribute;
-      justify-content: space-around;
+  flex-wrap: wrap;
+  justify-content: space-around;
 }
 .section-images div{
   position: relative;
   margin-bottom: 20px;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
   height: 210px;
   min-width: 30%;
@@ -42,19 +27,14 @@ span:last-child{
   right: 0;
 } 
 .section-images img {
-  -o-object-fit: cover;
-     object-fit: cover;
-  -webkit-transition: all .3s;
-  -o-transition: all .3s;
+  object-fit: cover;
   transition: all .3s;
   cursor: pointer;
 
 }
  
 .section-images .gallery-img:hover{
--webkit-transform: scale(1.02);
-    -ms-transform: scale(1.02);
-        transform: scale(1.02);  
+transform: scale(1.02);  
 }
 
 .section-filters{
@@ -93,34 +73,23 @@ margin-bottom: 15px ;
   height: 0.1em;
   background-color: white;
   opacity: 0;
-  -webkit-transition: opacity 300ms, -webkit-transform 300ms;
-  transition: opacity 300ms, -webkit-transform 300ms;
-  -o-transition: opacity 300ms, transform 300ms;
   transition: opacity 300ms, transform 300ms;
-  transition: opacity 300ms, transform 300ms, -webkit-transform 300ms;
 }
 
 .section-filters button:hover::after,
 .section-filters button:focus::after {
   opacity: 1;
-  -webkit-transform: translate3d(0, 0.2em, 0);
-          transform: translate3d(0, 0.2em, 0);
+  transform: translate3d(0, 0.2em, 0);
 }
 li:nth-child(3) .section-filters button::after {
   opacity: 1;
-  -webkit-transform: scale(0);
-      -ms-transform: scale(0);
-          transform: scale(0);
-  -webkit-transform-origin: center;
-      -ms-transform-origin: center;
-          transform-origin: center;
+  transform: scale(0);
+  transform-origin: center;
 }
 
 li:nth-child(3) .section-filters button:hover::after,
 li:nth-child(3) .section-filters button:focus::after{
-  -webkit-transform: scale(2);
-      -ms-transform: scale(2);
-          transform: scale(2);
+  transform: scale(2);
 }
 /* finish Hoover underline */
 
@@ -139,16 +108,15 @@ li:nth-child(3) .section-filters button:focus::after{
   z-index: 1;
   left: 50%; 
   top: 50%; 
-  -webkit-transform: translate(-50%, -50%); 
-      -ms-transform: translate(-50%, -50%); 
-          transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
 }
 .full-sizeImg-wrapper::after{
-  right: 10px;
+  right: 0;
   cursor: pointer;
-  font-size: 20px;
+  font-size: 24px;
   position: absolute;
   content: 'X';
+  padding: 6px 12px;
 }
 
 /* Button Back to TOP w3school*/
@@ -176,6 +144,9 @@ li:nth-child(3) .section-filters button:focus::after{
 
 /* Mobile Version */
 @media(max-width: 860px){
+  .full-sizeImg-wrapper{
+  width: 100%;
+}
  .fullSize{
    width: 100%;
  }
@@ -184,8 +155,6 @@ li:nth-child(3) .section-filters button:focus::after{
  }
  .section-filters{
    width: 100%;
-   display: -webkit-box;
-   display: -ms-flexbox;
    display: flex; 
    margin: -35px auto 0;
  }
@@ -194,3 +163,4 @@ li:nth-child(3) .section-filters button:focus::after{
  }
 
 }
+
