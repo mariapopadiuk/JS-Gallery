@@ -32,7 +32,6 @@ span:last-child{
   cursor: pointer;
 
 }
- 
 .section-images .gallery-img:hover{
 transform: scale(1.02);  
 }
@@ -63,7 +62,6 @@ margin-bottom: 15px ;
 .section-filters button{
   position: relative;
 }
-
 .section-filters button::after {
   content: '';
   position: absolute;
@@ -161,6 +159,5 @@ li:nth-child(3) .section-filters button:focus::after{
  .section-filters h2{
    padding: 10px;
  }
-
 }
 

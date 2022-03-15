@@ -12,13 +12,15 @@ On the gallery page are two sections, aside with filters and categories, and the
 
 Images can be sorted by likes and views, and also sorted by categories (animals or forest).
 
+Documentation 
+https://docs.google.com/presentation/d/1AlPnvZVlVQTOpJdvM4qQxJALY8cC5F1zuQb_FPCxSdE/edit?usp=sharing
 
 To  use json server replace url in fetch to 'devUrl'
-
 In project used external library:
 - json server 
 to run this project in dev mode install json-server https://www.npmjs.com/package/json-server#getting-started
-then run json-server --watch db.json    
+then run json-server --watch db.json in project directory
 
-https://mariapopadiuk.github.io/JS-Gallery/ github pages
+
+
 

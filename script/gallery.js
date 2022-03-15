@@ -125,7 +125,7 @@ function init() {
 
 
   sectionImages.addEventListener('click', (e) => {
-    if (e.target.classList[0] === 'gallery-img') {
+    if (e.target.classList.contains('gallery-img')) {
       wrapper.classList.add('layout')
       wrapper.innerHTML = `<div class="full-sizeImg-wrapper"><img class="fullSize" src="${e.target.src}" alt=""/></div>`
     }
@@ -134,7 +134,7 @@ function init() {
 
 
   wrapper.addEventListener('click', (e) => {
-    if (e.target.classList[0] === 'full-sizeImg-wrapper') {
+    if (e.target.classList.contains('full-sizeImg-wrapper')) {
       wrapper.classList.remove('layout')
       e.target.remove()
     }
@@ -142,7 +142,6 @@ function init() {
 
   //dynamic date
   date.innerHTML = new Date().getFullYear();
-
 }
 
 
@@ -168,7 +167,6 @@ function init() {
 //   - Primeiro passo è limpar section-img
 //   - Estou usar método fetch para iterar cada img
 //   - Terceiro Desenhar div com img, likes,views
-
 
 
 //Mock API
